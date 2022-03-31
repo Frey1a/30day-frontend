@@ -1,4 +1,4 @@
-# 📓 30day-fontend
+# 📓 30day-frontend
 ## 👉 Introduce
 - ☺️ This is the challenge I set for myself to develop myself
 - 😤 Inspiration is taken from [![youtube](https://img.shields.io/badge/-Youtube-red?style=flat-square&logo=Youtube)](https://youtube.com/playlist?list=PLodO7Gi1F7R0zA8RkRHcDgnPduNBmjkb5)
