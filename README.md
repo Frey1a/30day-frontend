@@ -9,8 +9,8 @@
 
 |**Day:pushpin:**|**Date &nbsp;:calendar:**|**Lessons/Tasks Done :alarm_clock:**| **Reference Links :link:**|
 |------|-----------------|--------------------|---------------------|
-|Day 1|April 1,2022|      |      |
-|Day 2|April 2,2022|      |      |
+|Day 1|April 1,2022|Product Card|      |
+|Day 2|April 2,2022|Profile Card|      |
 |Day 3|April 3,2022|      |      |
 |Day 4|April 4,2022|      |      |
 |Day 5|April 5,2022|      |      |
