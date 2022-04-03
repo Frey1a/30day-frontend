@@ -1,16 +1,14 @@
-const modal = document.querySelector('.modal')
-const openModalBtn = document.querySelector('.open-modal-btn')
-const iconCloseModal = document.querySelector('.modal__header i')
-const buttonCloseModal = document.querySelector('.modal__footer button')
+const openModal = document.querySelector('.content__button')
+const modal = document.querySelector('.content__modal')
+const iconClose = document.querySelector('.modal__header i')
+const closeButton = document.querySelector('.modal__footer--button')
 
-function toggleModal() {
-	modal.classList.toggle('hide')
+
+openModal.addEventListener('click', togleModal)
+closeButton.addEventListener('click', togleModal)
+iconClose.addEventListener('click', togleModal)
+
+function togleModal() {
+	modal.classList.toggle("hiden")
 }
 
-openModalBtn.addEventListener('click', toggleModal)
-iconCloseModal.addEventListener('click', toggleModal)
-buttonCloseModal.addEventListener('click', toggleModal)
-
-modal.addEventListener('click', (e) => {
-	if (e.target == e.currentTarget) toggleModal()
-})
