@@ -11,7 +11,7 @@
 |------|-----------------|--------------------|---------------------|
 |Day 1|April 1,2022|Product Card|[Here](https://frey1a.github.io/30day-frontend/day/day1/index.html)|
 |Day 2|April 2,2022|Profile Card|[Here](https://frey1a.github.io/30day-frontend/day/day2/index.html)|
-|Day 3|April 3,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day3/index.html)|
+|Day 3|April 3,2022|Create Modal|[Here](https://frey1a.github.io/30day-frontend/day/day3/index.html)|
 |Day 4|April 4,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day4/index.html)|
 |Day 5|April 5,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day5/index.html)|
 |Day 6|April 6,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day6/index.html)|
