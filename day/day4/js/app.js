@@ -9,7 +9,6 @@ let currentIndex = 0
 
 function showImg() {
 	pickImage.src = listImage[currentIndex].src
-	gallery.classList.add('show')
 
 }
 
@@ -27,6 +26,7 @@ listImage.forEach((item, index) => {
 			next.classList.remove('hiden')
 		}
 		showImg()
+		gallery.classList.add('show')
 	})
 })
 close.addEventListener('click', removeShow)
@@ -68,6 +68,12 @@ function nextImage() {
 document.addEventListener('keydown', function (e) {
 	if (e.keyCode == 27) {
 		removeShow()
+	}
+	if (e.keyCode == 37) {
+		prevImage()
+	}
+	if (e.keyCode == 39) {
+		nextImage()
 	}
 })
 
