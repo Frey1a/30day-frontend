@@ -1,45 +1,101 @@
-const images = document.querySelectorAll('.wrapper .image img')
+const listImage = document.querySelectorAll('.image img')
+const prev = document.querySelector('.prev')
+const next = document.querySelector('.next')
+const close = document.querySelector('.close-icon')
+const pickImage = document.querySelector('.gallery__inner img')
 const gallery = document.querySelector('.gallery')
-const galleryImg = document.querySelector('.gallery-inner img')
-const close = document.querySelector('.gallery .close')
-
-const next = document.querySelector('.control.next')
-const prev = document.querySelector('.control.prev')
 
 let currentIndex = 0
 
-images.forEach((img, index) => {
-	img.addEventListener('click', () => {
-		currentIndex = index
-		showGallery()
-	})
-})
-
-function showGallery() {
-	currentIndex == images.length - 1
-		? next.classList.add('hide')
-		: next.classList.remove('hide')
-
-	currentIndex == 0 ? prev.classList.add('hide') : prev.classList.remove('hide')
-
+function showImg() {
+	pickImage.src = listImage[currentIndex].src
 	gallery.classList.add('show')
-	galleryImg.src = images[currentIndex].src
+
 }
 
-close.addEventListener('click', () => {
+listImage.forEach((item, index) => {
+	item.addEventListener('click', function () {
+		currentIndex = index
+		if (currentIndex == 0) {
+			prev.classList.add('hiden')
+		} else {
+			prev.classList.remove('hiden')
+		}
+		if (currentIndex == 7) {
+			next.classList.add('hiden')
+		} else {
+			next.classList.remove('hiden')
+		}
+		showImg()
+	})
+})
+close.addEventListener('click', removeShow)
+prev.addEventListener('click', prevImage)
+next.addEventListener('click', nextImage)
+
+function removeShow() {
 	gallery.classList.remove('show')
+}
+
+function prevImage() {
+	if (currentIndex > 0) {
+		currentIndex--
+	}
+	showImg()
+	if (currentIndex == 0) {
+		prev.classList.add('hiden')
+	} else {
+		prev.classList.remove('hiden')
+		next.classList.remove('hiden')
+	}
+
+}
+
+function nextImage() {
+	if (currentIndex < 7) {
+		currentIndex++
+	}
+	showImg()
+	if (currentIndex == 7) {
+		next.classList.add('hiden')
+	} else {
+		prev.classList.remove('hiden')
+		next.classList.remove('hiden')
+	}
+
+}
+
+document.addEventListener('keydown', function (e) {
+	if (e.keyCode == 27) {
+		removeShow()
+	}
 })
 
-next.addEventListener('click', () => {
-	currentIndex != images.length - 1 ? currentIndex++ : undefined
-	showGallery()
-})
-prev.addEventListener('click', () => {
-	currentIndex != 0 ? currentIndex-- : undefined
-	showGallery()
-})
 
-// esc click
-document.addEventListener('keydown', (e) => {
-	if (e.keyCode == 27) gallery.classList.remove('show')
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
