@@ -5,7 +5,7 @@
 - 😎 I start on April 1, 2022 ![Time start](https://img.shields.io/date/1648774800?color=bbed3e&label=%E2%8F%B1&style=flat-square)
 ## 👉 Timeline
 
-## Timeline
+## Table Time
 
 |**Day:pushpin:**|**Date &nbsp;:calendar:**|**Lessons/Tasks Done :alarm_clock:**| **Reference Links :link:**|
 |------|-----------------|--------------------|---------------------|
