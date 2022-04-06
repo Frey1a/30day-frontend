@@ -14,7 +14,7 @@
 |Day 3|April 3,2022|Create Modal|[Here](https://frey1a.github.io/30day-frontend/day/day3/index.html)|
 |Day 4|April 4,2022|Image Gallery|[Here](https://frey1a.github.io/30day-frontend/day/day4/index.html)|
 |Day 5|April 5,2022|Search Box|[Here](https://frey1a.github.io/30day-frontend/day/day5/index.html)|
-|Day 6|April 6,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day6/index.html)|
+|Day 6|April 6,2022|Detect Pressed Key|[Here](https://frey1a.github.io/30day-frontend/day/day6/index.html)|
 |Day 7|April 7,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day7/index.html)|
 |Day 8|April 8,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day8/index.html)|
 |Day 9|April 9,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day9/index.html)|
