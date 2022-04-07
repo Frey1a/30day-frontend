@@ -1,46 +1,42 @@
-const ul = document.querySelector('ul'),
-	input = document.querySelector('input')
+const inputText = document.querySelector('.box__note input')
+const boxSave = document.querySelector('.box__save')
+const removeButton = document.querySelector('.box__button')
 
-let tags = ['nodejs', 'reactjs']
 
-createTag()
+var tags = ['Nodejs', 'ReactJS']
 
-function createTag() {
-	ul.innerHTML = ''
-	tags.forEach((tag, index) => {
-		let liTag = `
-            <li>${tag}
-            <i class="uit uit-multiply" onclick="removeTag(this, '${index}')"></i>
-            </li>
-            `
-		ul.innerHTML += liTag
-	})
+renderTags()
 
-	ul.appendChild(input)
-	input.focus()
-}
-
-function removeTag(element, index) {
-	tags.splice(index, 1)
-	element.parentElement.remove()
-	input.focus()
-}
-
-function addTag(e) {
-	if (e.key == 'Enter') {
-		let tag = e.target.value.trim()
-		if (tag != '' && !tags.includes(tag)) {
-			tags.push(tag)
-			createTag()
-		}
-		e.target.value = ''
+function renderTags() {
+	boxSave.innerHTML = ''
+	for (let i = 0; i < tags.length; i++) {
+		const tag = tags[i]
+		boxSave.innerHTML += `<li>${tag}<i class="uit uit-multiply" onclick="removeTag(${i})"></i></li>`
 	}
 }
 
-input.addEventListener('keyup', addTag)
+function removeTag(index) {
+	tags.splice(index, 1)
+	renderTags()
+}
 
-const removeBtn = document.querySelector('.btn-removeAll')
-removeBtn.addEventListener('click', () => {
-	tags.length = 0
-	createTag()
+
+inputText.addEventListener('keydown', function (event) {
+	if (event.key == 'Enter') {
+		console.log("event.keycode")
+		tags.push(inputText.value.trim())
+		renderTags()
+		inputText.value = ''
+
+	}
 })
+
+removeButton.addEventListener('click', function () {
+	tags = []
+	renderTags()
+})
+
+
+
+
+
