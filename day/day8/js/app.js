@@ -1,89 +1,119 @@
 const form = document.querySelector('form')
-const username = document.getElementById('username')
-const email = document.getElementById('email')
-const password = document.getElementById('password')
-const password2 = document.getElementById('password2')
+const formControl = document.querySelectorAll('.form--control')
+const userName = document.querySelector('#user-name')
+const emailUser = document.querySelector('#email-user')
+const passwordUser = document.querySelector('#password-user')
+const confirmPassword = document.querySelector('#password-confirm')
 
-// Show input error message
+
+var listAllInput = ([userName, emailUser, passwordUser, confirmPassword])
+var listInfo = ["Username", "Email", "Passwords", "Confirm Password"]
+var listPass = [listInfo[2], listInfo[3]]
+
+
 function showError(input, message) {
-	const formControl = input.parentElement
-	formControl.className = 'form-control error'
-	const small = formControl.querySelector('small')
+	let parent = input.parentElement
+	let small = parent.querySelector('small')
+
+	parent.classList.remove('success')
+	parent.classList.remove('warning')
+
+	parent.classList.add('error')
 	small.innerText = message
 }
 
-// Show success outline
-function showSuccess(input) {
-	const formControl = input.parentElement
-	formControl.className = 'form-control success'
-    const small = formControl.querySelector('small')
-	small.innerText = ''
+function showWarning(input, message) {
+	let parent = input.parentElement
+	let small = parent.querySelector('small')
+
+	parent.classList.remove('error')
+	parent.classList.remove('success')
+
+
+	parent.classList.add('warning')
+
+
 }
 
-// Check email is valid
-function checkEmail(input) {
-	const re =
-		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+function showSuccess(input, message) {
 
-	if (re.test(input.value.trim())) {
-		showSuccess(input)
-	} else {
-		showError(input, 'Email is not valid')
-	}
+	let parent = input.parentElement
+	let small = parent.querySelector('small')
+
+	parent.classList.remove('error')
+	parent.classList.remove('warning')
+
+	parent.classList.add('success')
+	small.innerText = message
+
 }
-
-// Check required fields
-function checkRequired(inputArr) {
-	let isRequired = false
-	inputArr.forEach(function (input) {
-		if (input.value.trim() === '') {
-			showError(input, `${getFieldName(input)} is required`)
-			isRequired = true
-		} else {
-			showSuccess(input)
+//check input
+function checkEmptyError(listInput) {
+	let isEmptyError = false
+	listInput.forEach((input, index) => {
+		input.value = input.value.trim()
+		if (!input.value) {
+			isEmptyError = true;
+			showError(input, listInfo[index])
 		}
 	})
-
-	return isRequired
+	return isEmptyError;
 }
 
-// Check input length
-function checkLength(input, min, max) {
+function checkEmail(input, key) {
+	const regexEmail =
+		/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+	input.value.trim()
+	let isEmailError = !regexEmail.test(input.value)
+	if (isEmailError) {
+		showError(input, listInfo[key] + " Invalid")
+	}
+	return isEmailError
+
+}
+
+function checkLengthError(input, min, max, key) {
+	input.value = input.value.trim()
 	if (input.value.length < min) {
-		showError(
-			input,
-			`${getFieldName(input)} must be at least ${min} characters`
-		)
-	} else if (input.value.length > max) {
-		showError(
-			input,
-			`${getFieldName(input)} must be less than ${max} characters`
-		)
-	} else {
-		showSuccess(input)
+		showError(input, listInfo[key] + " is too short")
+		return true
 	}
-}
-
-// Check passwords match
-function checkPasswordsMatch(input1, input2) {
-	if (input1.value !== input2.value) {
-		showError(input2, 'Passwords do not match')
+	if (input.value.length > max) {
+		showError(input, listInfo[key] + " is too long")
+		return true
 	}
+	return false
 }
 
-// Get fieldname
-function getFieldName(input) {
-	return input.id.charAt(0).toUpperCase() + input.id.slice(1)
+
+function checkMatchPassWord(passwordInput, cfPasswordInput) {
+	if (passwordInput.value !== cfPasswordInput.value) {
+		showError(cfPasswordInput, "Password does not match")
+		return true
+	}
+	return false
 }
 
-// Event listeners
+
 form.addEventListener('submit', function (e) {
 	e.preventDefault()
 
-	if (!checkRequired([username, email, password, password2])) {
-		checkLength(username, 3, 15)
-		checkLength(password, 6, 25)
-		checkEmail(email)
-		checkPasswordsMatch(password, password2)
+	listAllInput.forEach((input, key) => {
+		showSuccess(input, listInfo[key] + " success!")
+	})
+
+
+	let isEmptyError = checkEmptyError([userName, emailUser, passwordUser, confirmPassword])
+
+	let isEmailError = checkEmail(emailUser, 1)
+	let isUesrNameError = checkLengthError(userName, 4, 16, 0)
+	let isPasswordError = checkLengthError(passwordUser, 8, 20, 2)
+	let isMatchError = checkMatchPassWord(passwordUser, confirmPassword)
+
+	if (isMatchError || isPasswordError || isEmailError || isEmptyError || isUesrNameError) {
+		//do nothing
+	} else {
+		//logic, some call API, ....
 	}
+
 })

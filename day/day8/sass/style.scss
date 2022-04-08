@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+$blue: #3ca7ee;
+$darkblue: #08609a;
+$purple: #9b408f;
+$white:#fff;
+$black:#000;
+$lightgrey: #dadada;
+$red: #ff0000;
+$green: #00ff00;
+$yellow: #fff023;
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	background: linear-gradient(120deg, $blue, $purple);
+	height: 100vh;
+	overflow: hidden;
+	position: relative;
+}
+
+.error{
+	border-bottom:2px solid $red!important;
+	small{
+		color: $red!important;
+	}
+}
+.success{
+	border-bottom: 2px solid $green!important;
+	small{
+		color: $green!important;
+	}
+}
+.warning {
+	border-bottom: 2px solid $yellow!important;
+	small{
+		color: #a4a000;
+	}
+}
+
+
+.container{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background-color: $white;
+	padding:20px 40px;
+	border-radius: 15px;
+	.container__header{
+			font-size: 30px;
+			text-align: center;
+
+
+	}
+	.form--control{
+			position: relative;
+			margin:40px 0;
+			border-bottom: 2px solid $lightgrey ;
+			input{
+					width: 100%;
+					font-size: 16px;
+					height: 40px;
+					outline: none;
+					background: none;
+					border: none;
+					box-shadow: none;
+
+			}
+			input:focus ~ span{
+				width: 100%;
+
+			}
+			span{
+				position: absolute;
+				border-bottom: 3px solid $blue;
+				width: 0;
+				top: 40px;
+				left: 0;
+				transition:0.3s;
+
+			}
+			small{
+				position: absolute;
+				top: 100%;
+				left: 0;
+				margin: 3px; 
+				
+			}
+
+				
+	}
+	.container__buttom{
+		border: none;
+		border-radius: 10px;
+		width: 100%;
+		padding: 10px 0;
+		font-size: 20px;
+		background-color: $blue;
+		color: $white;
+		cursor: pointer;
+		transition: 0.25s;
+
+	}
+	.container__buttom:hover{
+		background-color: $darkblue;
+	}
+	.signup__link{
+		text-align: center;
+		margin: 20px 0;
+
+			a{
+				color: $blue;
+				text-decoration: none;
+					
+			}
+	}
+
+}

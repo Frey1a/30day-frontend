@@ -2,17 +2,47 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register Form Validator</title>
-    <link rel="stylesheet" href="style.css" />
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Register Form Validator</title>
+	<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+	<div class="container">
+		<h1 class="container__header">Register</h1>
+		<form action="">
+			<div class="form--control">
+				<input type="text" id="user-name" placeholder="Username">
+				<span></span>
+				<small></small>
+			</div>
+			<div class="form--control">
+				<input type="email" id="email-user" placeholder="Email">
+				<span></span>
+				<small></small>
+			</div>
+			<div class="form--control">
+				<input type="password" id="password-user" placeholder="Password">
+				<span></span>
+				<small></small>
+			</div>
+			<div class="form--control">
+				<input type="password" id="password-confirm" placeholder="Confirm password">
+				<span></span>
+				<small></small>
+			</div>
+			<button class="container__buttom">Login</button>
+		</form>
+		<div class="signup__link">
+			Not a member?
+			<a href="#">Signup</a>
+		</div>
+	</div>
 
 
-    <script src="app.js"></script>
+	<script src="js/app.js"></script>
 </body>
 
 </html>
