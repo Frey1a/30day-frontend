@@ -1,54 +1,70 @@
-const input = document.querySelector('form input')
-const ul = document.querySelector('.todos')
-const form = document.querySelector('form')
 
-const todos = JSON.parse(localStorage.getItem('todos'))
+const input = document.querySelector("form input")
+const todos = document.querySelector(".todos")
+const buttom = document.querySelector("form button")
+const form = document.querySelector("form")
+const iconRemoveTodo = document.querySelectorAll(".todos li i")
 
-if (todos) {
-	todos.forEach((todo) => addTodo(todo))
-}
 
-function addTodo(todo) {
-	const li = document.createElement('li')
 
-	li.setAttribute('class', todo.completed ? 'completed' : '')
-	li.innerHTML = `
-        <span>${todo.text}</span>
-        <i class="fas fa-trash"></i>
-    `
+form.addEventListener("submit", function (event) {
+	event.preventDefault()
+	let valueInputTodo = input.value.trim()
+	if (valueInputTodo) {
+		addTodoElement({
+			text: valueInputTodo,
+		})
 
-	li.addEventListener('click', function () {
-		this.classList.toggle('completed')
-		updateTodos()
-	})
-
-	li.querySelector('i').addEventListener('click', (e) => {
-		e.target.parentElement.remove()
-		updateTodos()
-	})
-
-	ul.appendChild(li)
-	updateTodos()
-}
-
-form.addEventListener('submit', (e) => {
-	e.preventDefault()
-	const text = input.value.trim()
-	text != '' ? addTodo({ text, completed: false }) : undefined
-	input.value = ''
+		saveTodoList()
+	}
+	input.value = ""
 })
 
-function updateTodos() {
-	const list = document.querySelectorAll('li')
 
-	const todos = []
+function addTodoElement(todo) {
+	li = document.createElement("li")
 
-	list.forEach((item) => {
-		todos.push({
-			text: item.querySelector('span').innerHTML,
-			completed: item.classList.contains('completed'),
+	li.innerHTML = `
+		<span>${todo.text}</span>
+		<i class="fas fa-trash"></i>
+	`
+
+
+	li.setAttribute('class', todo.status == "completed" ? "completed" : "")
+
+	li.addEventListener("click", function () {
+		this.classList.toggle("completed")
+	})
+	li.querySelector("i").addEventListener("click", function () {
+		this.parentElement.remove()
+	})
+	todos.appendChild(li)
+
+}
+
+
+function saveTodoList() {
+	let todoList = document.querySelectorAll(".todos li")
+	let todoStorage = []
+	todoList.forEach(function (item) {
+		let text = item.querySelector("span").innerText
+		let status = item.getAttribute('class')
+
+		todoStorage.push({
+			text,
+			status
 		})
 	})
 
-	localStorage.setItem('todos', JSON.stringify(todos))
+	localStorage.setItem('todoList', JSON.stringify(todoStorage))
 }
+
+
+function init() {
+	let data = JSON.parse(localStorage.getItem('todoList'))
+	data.forEach(function (item) {
+		addTodoElement(item)
+
+	})
+}
+init()
