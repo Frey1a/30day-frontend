@@ -17,7 +17,7 @@
 |Day 6|April 6,2022|Detect Pressed Key|[Here](https://frey1a.github.io/30day-frontend/day/day6/index.html)|
 |Day 7|April 7,2022|Search Tags|[Here](https://frey1a.github.io/30day-frontend/day/day7/index.html)|
 |Day 8|April 8,2022|Register Form Validator|[Here](https://frey1a.github.io/30day-frontend/day/day8/index.html)|
-|Day 9|April 9,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day9/index.html)|
+|Day 9|April 9,2022|Weather App|[Here](https://frey1a.github.io/30day-frontend/day/day9/index.html)|
 |Day 10|April 10,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day10/index.html)|
 |Day 11|April 11,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day11/index.html)|
 |Day 12|April 12,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day12/index.html)|
