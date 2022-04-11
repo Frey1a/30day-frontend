@@ -1,46 +1,64 @@
-const input = document.querySelector('.input-search')
 
-function changeWeatherUI(weather) {
-	const city = document.querySelector('.name .city')
-	const country = document.querySelector('.name .country')
-	const time = document.querySelector('.time')
-	const temperature = document.querySelector('.temperature .value')
-	const shortDesc = document.querySelector('.short-desc')
+const screen = document.querySelector("#screen")
+const container = document.querySelector("#container")
+const searchInput = document.querySelector("#container input")
+const city = document.querySelector(".city")
+const country = document.querySelector('.country')
+const time = document.querySelector(".time")
+const valueTemp = document.querySelector(".temp__value")
+const shortDesc = document.querySelector(".short-desc")
+const spanMoreDesc = document.querySelectorAll(".more-desc span")
 
-	const visibility = document.querySelector('.visibility span')
-	const wind = document.querySelector('.wind span')
-	const cloud = document.querySelector('.cloud span')
 
-	city.innerHTML = weather.name
-	country.innerHTML = weather.sys.country
-	time.innerHTML = new Date().toLocaleString()
-	shortDesc.innerHTML = weather.weather[0].main
 
-	const temp = Math.round(weather.main.temp)
-	temperature.innerHTML = temp
+//run 
 
-	temp >= 18
-		? (document.body.className = 'hot')
-		: (document.body.className = 'cold')
+searchInput.addEventListener("keydown", function (e) {
+	let valueSearch = searchInput.value.trim()
+	if (e.key == "Enter") {
+		nameCity = valueSearch
+		changeWeather(nameCity)
 
-	visibility.innerHTML = weather.visibility + ' (m)'
-	wind.innerHTML = weather.wind.speed + ' (m/s)'
-	cloud.innerHTML = weather.clouds.all + ' (%)'
-}
-
-input.addEventListener('keyup', (e) => {
-	if (e.keyCode === 13) {
-		getWeather(e.target.value)
+		//clear forcus
+		searchInput.value = ""
 	}
 })
 
-async function getWeather(input) {
-	const url = `https://api.openweathermap.org/data/2.5/weather?q=${input}&units=metric&appid=d78fd1588e1b7c0c2813576ba183a667`
+// get API
+async function changeWeather(inputName) {
+	let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${inputName}&appid=f7c525dd754303ac40be5703f95606d5`
 
-	const res = await fetch(url)
-	const weather = await res.json()
+	let data = await fetch(apiURL).then(res => res.json())
 
-	changeWeatherUI(weather)
+	floorTemp = Math.floor(data.main.temp - 273.15)
+	floorTemp <= 18 ? coldTemp() : hotTemp()
+
+	//innerHTML
+	city.innerHTML = data.name
+	country.innerHTML = data.sys.country
+	// time.innerHTML = data.
+	valueTemp.innerHTML = floorTemp
+
+	shortDesc.innerHTML = data.weather[0].main
+
+	spanMoreDesc[0].innerHTML = data.visibility + " (m)"
+	spanMoreDesc[1].innerHTML = data.wind.speed + " (m/s)"
+	spanMoreDesc[2].innerHTML = data.clouds.all + " (%)"
+
+
 }
 
-getWeather('ha noi')
+function coldTemp() {
+	container.classList.remove("hot")
+	screen.classList.remove("screen__hot")
+	container.classList.add("cold")
+	screen.classList.add("screen__cold")
+}
+function hotTemp() {
+	container.classList.remove("cold")
+	screen.classList.remove("screen__cold")
+	container.classList.add("hot")
+	screen.classList.add("screen__hot")
+
+}
+
