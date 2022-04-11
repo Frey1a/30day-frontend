@@ -9,9 +9,8 @@ const valueTemp = document.querySelector(".temp__value")
 const shortDesc = document.querySelector(".short-desc")
 const spanMoreDesc = document.querySelectorAll(".more-desc span")
 
-
-
 //run 
+changeWeather("ari")
 
 searchInput.addEventListener("keydown", function (e) {
 	let valueSearch = searchInput.value.trim()
@@ -23,6 +22,7 @@ searchInput.addEventListener("keydown", function (e) {
 		searchInput.value = ""
 	}
 })
+
 
 // get API
 async function changeWeather(inputName) {
@@ -62,3 +62,5 @@ function hotTemp() {
 
 }
 
+//running now time
+setInterval(function () {time.innerHTML = new Date().toLocaleString()}, 1000)
