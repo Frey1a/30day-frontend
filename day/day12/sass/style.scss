@@ -1,0 +1,34 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content:center;
+	align-items:center ;
+	flex-direction: column;
+}
+.title{
+	font-size: 30px;
+}
+.ranger{
+	margin: 30px;
+	border-radius: 10px;
+	width: 60%;
+	height: 50px;
+
+	.ranger-bar{
+		max-width: 100%;
+		width: 50%;
+		height: 100%;
+		border-radius: 10px;
+
+	background-image: linear-gradient(to right, #4120e6,#8f10e3,#ba09d9);
+	}
+}
+
+
