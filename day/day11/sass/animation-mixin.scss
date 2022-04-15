@@ -1,0 +1,31 @@
+@mixin animation-mixin($name,$value-0,$value-1, $value-2,$value-3 ) {
+  @keyframes #{$name} {
+		0%{
+			transform: translateX($value-0);
+		}
+		40%{
+			transform: translateX($value-1);
+		}
+		80%{
+			transform: translateX($value-2);
+		}
+		100%{
+			transform: translateX($value-3);
+		}
+	}
+@keyframes #{countdown} {
+	20%{
+			width: 100%;
+	}	
+	100%{
+		width: 0;
+
+	}
+	}
+
+}
+
+@include animation-mixin(slideShow,100%,-10%,0,-10px);
+@include animation-mixin(slideDown,-10px,0,-10%,120%);
+@include animation-mixin(countdown,0,0,0,0)
+
