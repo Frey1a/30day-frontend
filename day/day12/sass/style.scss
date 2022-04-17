@@ -11,6 +11,7 @@ body{
 	justify-content:center;
 	align-items:center ;
 	flex-direction: column;
+	background: rgba($color: #000000, $alpha: 0.5);
 }
 .title{
 	font-size: 30px;
@@ -22,10 +23,21 @@ body{
 	height: 50px;
 
 	.ranger-bar{
+		overflow: hidden;
 		max-width: 100%;
 		width: 50%;
 		height: 100%;
 		border-radius: 10px;
+		span{
+			display: flex;
+			color: #ffffff;
+			font-size: 23px ;
+			width: 100%;
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+
+		}
 
 	background-image: linear-gradient(to right, #4120e6,#8f10e3,#ba09d9);
 	}

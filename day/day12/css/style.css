@@ -11,6 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .title {
@@ -24,12 +25,21 @@ body {
   height: 50px;
 }
 .ranger .ranger-bar {
+  overflow: hidden;
   max-width: 100%;
-  min-width: 1%;
   width: 50%;
   height: 100%;
   border-radius: 10px;
   background-image: linear-gradient(to right, #4120e6, #8f10e3, #ba09d9);
+}
+.ranger .ranger-bar span {
+  display: flex;
+  color: #ffffff;
+  font-size: 23px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=style.css.map */
