@@ -1,18 +1,46 @@
 const imgShow = document.querySelector(".img-warp img")
 const listImg = document.querySelectorAll(".list-images div img")
+const listDiv = document.querySelectorAll(".list-img div")
 
 const prev = document.querySelector(".prev")
 const next = document.querySelector(".next")
 
-prev.addEventListener("click", changeImage())
-next.addEventListener("click", changeImage())
+let currentIndex = 0;
 
-function changeImage() {
+listImg.forEach((input, index) => {
+	input.addEventListener("click", e => {
+		currentIndex = index
+		showImg()
 
-	listImg.forEach((input, key) => {
-		input.setAttribute("class", "active")
 	})
+})
+
+prev.addEventListener("click", function () {
+	currentIndex -= 1
+	if (currentIndex < 0) {
+		currentIndex = 8
+	}
+	showImg()
 
 
+})
+
+next.addEventListener("click", function () {
+	currentIndex += 1
+	if (currentIndex > 8) {
+		currentIndex = 0
+	}
+	showImg()
+
+
+})
+
+function showImg() {
+	listImg.forEach(input => {
+		input.parentElement.classList.remove("active")
+	})
+	listImg[currentIndex].parentElement.classList.add("active")
+	imgShow.src = listImg[currentIndex].getAttribute("src")
 }
+
 
