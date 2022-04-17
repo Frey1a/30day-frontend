@@ -1,0 +1,10 @@
+const inputImg = document.querySelector("#input-img")
+
+console.log(inputImg)
+
+
+
+
+
+
+
