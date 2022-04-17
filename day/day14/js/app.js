@@ -2,6 +2,8 @@ const imgShow = document.querySelector(".img-warp img")
 const listImg = document.querySelectorAll(".list-images div img")
 const listDiv = document.querySelectorAll(".list-img div")
 
+
+
 const prev = document.querySelector(".prev")
 const next = document.querySelector(".next")
 
@@ -36,11 +38,19 @@ next.addEventListener("click", function () {
 })
 
 function showImg() {
+	imgShow.style.opacity = "0"
 	listImg.forEach(input => {
 		input.parentElement.classList.remove("active")
 	})
-	listImg[currentIndex].parentElement.classList.add("active")
-	imgShow.src = listImg[currentIndex].getAttribute("src")
+
+	setTimeout(function () {
+		imgShow.style.opacity = "1"
+		listImg[currentIndex].parentElement.classList.add("active")
+		imgShow.src = listImg[currentIndex].getAttribute("src")
+
+	}, 400)
 }
+
+
 
 
