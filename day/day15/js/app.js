@@ -1,42 +1,44 @@
-const products = document.querySelector('.products')
-const filter = document.getElementById('filter')
-const listItems = []
+const products = document.querySelector(".products")
+const input = document.querySelector("header input")
 
-getData()
 
-filter.addEventListener('input', (e) => filterData(e.target.value))
 
-async function getData() {
-	const res = await fetch('https://fakestoreapi.com/products')
-
-	const results = await res.json()
-
-	// Clear products
-	products.innerHTML = ''
-
-	results.forEach((product) => {
-		const div = document.createElement('div')
-		div.setAttribute('class', 'product')
-		listItems.push(div)
-
-		div.innerHTML = `
-			<img src="${product.image}" alt="">
-			<div class="product-detail">
-				<h4>${product.title.slice(0, 30)}</h4>
-				<p>$${product.price}</p>
-			</div>
-        `
-
-		products.appendChild(div)
+fetch('https://fakestoreapi.com/products')
+	.then(res => res.json())
+	.then(data => {
+		products.innerHTML = ""
+		data.forEach(item => {
+			createProduct(item.image, item.title, item.price)
+		})
 	})
-}
 
-function filterData(search) {
-	listItems.forEach((item) => {
-		if (item.innerText.toLowerCase().includes(search.toLowerCase())) {
-			item.classList.remove('hide')
+
+input.addEventListener("input", function (e) {
+	let txtSearch = e.target.value.trim().toLowerCase()
+	let listproduct = document.querySelectorAll(".product")
+	listproduct.forEach(item => {
+		if (item.innerText.toLowerCase().includes(txtSearch)) {
+			item.classList.remove("hide")
 		} else {
-			item.classList.add('hide')
+			item.classList.add("hide")
 		}
 	})
+})
+
+
+function createProduct(imgSrc, name, price) {
+	let product = document.createElement("div")
+	products.style.overflow = "scroll"
+	product.classList.add("product")
+	product.innerHTML = `				<img src="${imgSrc}" alt="">
+				<div class="product-detail">
+					<h4>${name}</h4>
+					<p>$${price}</p>
+				</div>
+`
+	products.append(product)
 }
+
+
+
+
