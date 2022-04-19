@@ -22,10 +22,10 @@
 |Day 11|April 11,2022|Toast Nofication|[Here](https://frey1a.github.io/30day-frontend/day/day11/index.html)|
 |Day 12|April 12,2022|Create Range Slider|[Here](https://frey1a.github.io/30day-frontend/day/day12/index.html)|
 |Day 13|April 13,2022|Preview Image|[Here](https://frey1a.github.io/30day-frontend/day/day13/index.html)|
-|Day 14|April 14,2022|Slideshow|[Here](https://frey1a.github.io/30day-frontend/day/day14/index.html)|
+|Day 14|April 14,2022|Slide show|[Here](https://frey1a.github.io/30day-frontend/day/day14/index.html)|
 |Day 15|April 15,2022|Live Product Filter|[Here](https://frey1a.github.io/30day-frontend/day/day15/index.html)|
 |Day 16|April 16,2022|Show On Scroll|[Here](https://frey1a.github.io/30day-frontend/day/day16/index.html)|
-|Day 17|April 17,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day17/index.html)|
+|Day 17|April 17,2022|Counter Up|[Here](https://frey1a.github.io/30day-frontend/day/day17/index.html)|
 |Day 18|April 18,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day18/index.html)|
 |Day 19|April 19,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day19/index.html)|
 |Day 20|April 20,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day20/index.html)|
