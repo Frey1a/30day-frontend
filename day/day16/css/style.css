@@ -6,8 +6,16 @@
   text-decoration: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   position: relative;
+}
+
+#main {
+  overflow: hidden;
 }
 
 /* Mixin */
@@ -16,7 +24,7 @@ body {
   height: 100vh;
 }
 
-#Header {
+#header {
   width: 100%;
   height: 40px;
   background-color: #000;
@@ -24,7 +32,7 @@ body {
   z-index: 1;
   overflow: hidden;
 }
-#Header a {
+#header a {
   padding: 10px 20px;
   margin-right: 10px;
   line-height: 40px;
@@ -42,6 +50,9 @@ body {
   color: #fff;
   transition: 1s;
 }
+#home div {
+  transition: 0.5s;
+}
 @media (max-width: 479px) {
   #home {
     padding: 0 30px;
@@ -54,7 +65,7 @@ body {
 }
 #home p {
   font-size: 20px;
-  width: 100%;
+  width: 50%;
 }
 
 #about {
@@ -70,13 +81,17 @@ body {
   border-radius: 15px;
   padding: 20px;
   color: #fff;
+  transition: 0.5s;
 }
+#about .box h2 {
+  margin-bottom: 10px;
+}
+
 #team {
   background: linear-gradient(180deg, #017c2c 50%, #fff 50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 1s;
 }
 @media (max-width: 479px) {
   #team {
@@ -84,10 +99,12 @@ body {
   }
 }
 #team .person {
+  transition: 0.5s;
   width: 200px;
   margin: 10px 20px;
   border: 1px solid #000;
   border-radius: 10px;
+  transform: scale(0);
   background-color: #fff;
   padding: 10px 15px;
 }
@@ -103,9 +120,24 @@ body {
 #team .person p {
   margin-top: 10px;
 }
+#team .start {
+  transform: scale(1);
+}
 
 #contact {
   transition: 1s;
+}
+
+.left-to-right {
+  transform: translateX(-120%);
+}
+
+.right-to-left {
+  transform: translateX(120%);
+}
+
+.start {
+  transform: translate(0);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,9 +4,18 @@
 	box-sizing: border-box;
 	text-decoration: none;
 }
+
+html{
+	scroll-behavior: smooth;
+}
+
 body{
 	position: relative;
+
 	
+}
+#main{
+	overflow: hidden;
 }
 
 /* Mixin */
@@ -37,7 +46,10 @@ $desktop-width: 1024px;
 
 
 
-#Header{
+
+
+
+#header{
 	width: 100%;
 	height: 40px;
 	background-color: #000;;
@@ -64,6 +76,10 @@ $desktop-width: 1024px;
 	padding-top: 40px;
 	color: #fff;
 	transition: 1s;
+	div{
+
+		transition: 0.5s;
+	}
 	@include mobile{
 		padding: 0 30px;
 	}
@@ -74,44 +90,48 @@ $desktop-width: 1024px;
 	}
 	p{
 		font-size: 20px;
-		width: 100%;
+		width: 50%;
 	}
 
 }
 	
 #about{
-		display:flex;
-		align-items: center;
-		text-justify: center;
-		justify-content: space-evenly;
+	display:flex;		
+	align-items: center;
+	text-justify: center;
+	justify-content: space-evenly;
+	transition: 1s;
+	.box{
+			background-color: #000;
+			width: 40%;
+			border-radius: 15px;
+			padding:20px;
+			color: #fff;				
+			transition: 0.5s;
+			h2{
+				margin-bottom: 10px;
+			}
 
-		.box{
-				background-color: #000;
-				width: 40%;
-				border-radius: 15px;
-				padding:20px;
-				color: #fff;
-				h2{
-				}
 		}
 
-	transition: 1s;
 }
 	
 #team{
-    background: linear-gradient(180deg, #017c2c 50%, #fff 50%);
+	    background: linear-gradient(180deg, #017c2c 50%, #fff 50%);
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		@include mobile{
-				flex-direction: column;
+			flex-direction: column;
 		}
-		transition: 1s;
 		.person{
+			transition: 0.5s;
 			width: 200px;
 			margin: 10px 20px;
 			border: 1px solid #000;
 			border-radius: 10px;
+			transform: scale(0);
 			background-color: #fff;
 			padding: 10px 15px;
 			@include mobile{
@@ -124,12 +144,25 @@ $desktop-width: 1024px;
 			p{
 				margin-top: 10px;
 			}
+		
+		}
+		.start{
 
+			transform: scale(1);
 		}
 }
 
 #contact{
-
 	transition: 1s;
+}
+.left-to-right{
+	transform: translateX(-120%);
+
+}
+.right-to-left{
+	transform: translateX(120%);
+}
+.start{
+	transform:translate(0);
 }
 	
