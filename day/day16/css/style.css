@@ -1,0 +1,111 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  position: relative;
+}
+
+/* Mixin */
+/* Set các giá trị với màn hình tương ứng */
+.full-height {
+  height: 100vh;
+}
+
+#Header {
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+}
+#Header a {
+  padding: 10px 20px;
+  margin-right: 10px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+#home {
+  background: linear-gradient(to right, #3abd4c, #2bb6d9);
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  padding-top: 40px;
+  color: #fff;
+  transition: 1s;
+}
+@media (max-width: 479px) {
+  #home {
+    padding: 0 30px;
+  }
+}
+#home h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+#home p {
+  font-size: 20px;
+  width: 100%;
+}
+
+#about {
+  display: flex;
+  align-items: center;
+  text-justify: center;
+  justify-content: space-evenly;
+  transition: 1s;
+}
+#about .box {
+  background-color: #000;
+  width: 40%;
+  border-radius: 15px;
+  padding: 20px;
+  color: #fff;
+}
+#team {
+  background: linear-gradient(180deg, #017c2c 50%, #fff 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+}
+@media (max-width: 479px) {
+  #team {
+    flex-direction: column;
+  }
+}
+#team .person {
+  width: 200px;
+  margin: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px 15px;
+}
+@media (max-width: 479px) {
+  #team .person {
+    width: 90%;
+  }
+}
+#team .person h3 {
+  color: #0ffff0;
+  font-size: 25px;
+}
+#team .person p {
+  margin-top: 10px;
+}
+
+#contact {
+  transition: 1s;
+}
+
+/*# sourceMappingURL=style.css.map */
