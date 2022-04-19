@@ -1,22 +1,27 @@
-const face = document.querySelector('.counter.face h2')
-const youtube = document.querySelector('.counter.youtube h2')
-const tiktok = document.querySelector('.counter.tiktok h2')
+const listCount = document.querySelectorAll(".count")
 
-function counterUp(el, to) {
-	let speed = 200
-	let from = 0
-	let step = to / speed
-	const counter = setInterval(function () {
-		from += step
-		if (from > to) {
-			clearInterval(counter)
-			el.innerText = to
+listCount.forEach(input => {
+	counting(input)
+
+})
+function counting(input) {
+	let numberCount = input.querySelector(".count__number")
+	let to = parseInt(numberCount.innerText)
+	let count = 0
+	let time = 144
+	let step = to / time
+	setInterval(function () {
+		count += step
+		if (count >= to) {
+			clearInterval(counting)
+			numberCount.innerText = to
 		} else {
-			el.innerText = Math.ceil(from)
+			numberCount.innerText = Math.round(count)
+
 		}
 	}, 1)
 }
 
-counterUp(face, 3300)
-counterUp(youtube, 1000)
-counterUp(tiktok, 9900)
+
+
+
