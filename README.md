@@ -26,9 +26,9 @@
 |Day 15|April 15,2022|Live Product Filter|[Here](https://frey1a.github.io/30day-frontend/day/day15/index.html)|
 |Day 16|April 16,2022|Show On Scroll|[Here](https://frey1a.github.io/30day-frontend/day/day16/index.html)|
 |Day 17|April 17,2022|Counter Up|[Here](https://frey1a.github.io/30day-frontend/day/day17/index.html)|
-|Day 18|April 18,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day18/index.html)|
-|Day 19|April 19,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day19/index.html)|
-|Day 20|April 20,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day20/index.html)|
+|Day 18|April 18,2022|Drag and Drop|[Here](https://frey1a.github.io/30day-frontend/day/day18/index.html)|
+|Day 19|April 19,2022|Drawing App|[Here](https://frey1a.github.io/30day-frontend/day/day19/index.html)|
+|Day 20|April 20,2022|Typing Animation Effect|[Here](https://frey1a.github.io/30day-frontend/day/day20/index.html)|
 |Day 21|April 21,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day21/index.html)|
 |Day 22|April 22,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day22/index.html)|
 |Day 23|April 23,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day23/index.html)|
