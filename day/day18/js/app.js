@@ -1,28 +1,35 @@
-const draggable = document.querySelector('.draggable')
-const boxes = document.querySelectorAll('.box')
+let boxes = document.querySelectorAll(".box")
+let listTarget = document.querySelectorAll(".target")
 
-draggable.addEventListener('dragstart', dragStart)
-draggable.addEventListener('dragend', dragEnd)
+let currentTarget = null
 
-boxes.forEach((box) => {
-	box.addEventListener('dragover', dragOver)
-	box.addEventListener('drop', dragDrop)
+listTarget.forEach(target => {
+	target.addEventListener("dragstart", function (e) {
+		this.classList.add("dragging")
+		currentTarget = this
+	})
+	target.addEventListener("dragend", function (e) {
+		this.classList.remove("dragging")
+	})
+
+
 })
 
-function dragStart() {
-	this.classList.add('dragging')
-}
+boxes.forEach(box => {
 
-function dragEnd() {
-	this.classList.remove('dragging')
-}
 
-function dragOver(e) {
-	// thêm preventDefault vì theo mặc định thả vào bên trong 1 phần tử sẽ bị vô hiệu hóa => xem con trỏ chuột khi over để rõ hơn
-	e.preventDefault()
-	this.appendChild(draggable)
-}
+	box.addEventListener("dragover", function (e) {
+		e.preventDefault()
+		if (!box.querySelector(".target")) {
+			this.appendChild(currentTarget)
+		}
 
-function dragDrop() {
-	this.appendChild(draggable)
-}
+	})
+	box.addEventListener("drop", function (e) {
+		if (!box.querySelector(".target")) {
+			this.appendChild(currentTarget)
+		}
+
+	})
+
+})
