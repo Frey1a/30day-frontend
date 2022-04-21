@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.buttom {
+  background-color: #fff;
+  border-radius: 10px;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+@media (max-width: 470px) {
+  .buttom {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+#container .header {
+  height: 65px;
+  width: 100%;
+  background-color: #00bfff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 470px) {
+  .header__left {
+    flex-wrap: wrap;
+  }
+}
+.header__left input {
+  padding: 10px;
+}
+@media (max-width: 470px) {
+  .header__left input {
+    padding: 4px;
+  }
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+#canvas {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+}
+
+/*# sourceMappingURL=style.css.map */

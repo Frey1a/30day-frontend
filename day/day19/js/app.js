@@ -1,98 +1,120 @@
-const canvas = document.getElementById('canvas')
-const colorEl = document.getElementById('color')
-const eraserEl = document.getElementById('eraser')
-const decreaseBtn = document.getElementById('decrease')
-const increaseBtn = document.getElementById('increase')
-const sizeEL = document.getElementById('size')
-const saveEl = document.getElementById('save')
-const clearEl = document.getElementById('clear')
+// call default value
 
-const context = canvas.getContext('2d')
+let color = document.querySelector("#header__color")
+let eraser = document.querySelector("#eraser")
+let sizePen = document.querySelector("#size")
+let sizeDown = document.querySelector("#size__down")
+let sizeUp = document.querySelector("#size__up")
+let canvas = document.querySelector("#canvas")
+let ctx = canvas.getContext("2d")
+let clearCanvas = document.querySelector("#clear__canvas")
+let saveButtom = document.querySelector("#save__buttom")
 
-let size = 10
-let isPressed = false
-colorEl.value = 'black'
-let color = colorEl.value
-let x, y
+let colorPen
 
-canvas.addEventListener('mousedown', (e) => {
-	isPressed = true
+let isDrawing = false
 
-	x = e.offsetX
-	y = e.offsetY
-})
+let size = 10;
+//set value pos1 and pos2
 
-document.addEventListener('mouseup', (e) => {
-	isPressed = false
+let pos1 = {
+	x: 0,
+	y: 0,
+}
+let pos2 = {
+	x: 0,
+	y: 0,
 
-	x = undefined
-	y = undefined
-})
-
-canvas.addEventListener('mousemove', (e) => {
-	if (isPressed) {
-		const x2 = e.offsetX
-		const y2 = e.offsetY
-
-		drawCircle(x2, y2)
-		drawLine(x, y, x2, y2)
-
-		x = x2
-		y = y2
-	}
-})
-
-function drawCircle(x, y) {
-	context.beginPath()
-	context.arc(x, y, size, 0, Math.PI * 2)
-	context.fillStyle = color
-	context.fill()
 }
 
-function drawLine(x1, y1, x2, y2) {
-	context.beginPath()
-	context.moveTo(x1, y1)
-	context.lineTo(x2, y2)
-	context.strokeStyle = color
-	context.lineWidth = size * 2
-	context.stroke()
-}
 
-function updateSizeOnScreen() {
-	sizeEL.innerText = size
-}
 
-increaseBtn.addEventListener('click', () => {
-	size += 5
 
-	if (size > 50) {
-		size = 50
-	}
-
-	updateSizeOnScreen()
+//clear canvas
+clearCanvas.addEventListener("click", () => {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
 })
 
-decreaseBtn.addEventListener('click', () => {
-	size -= 5
-
-	if (size < 5) {
+//click size down  event
+sizeDown.addEventListener("mousedown", () => {
+	if (size > 5) {
+		size -= 5
+	} else {
 		size = 5
 	}
 
-	updateSizeOnScreen()
-})
+	setSize()
 
-colorEl.addEventListener('change', (e) => (color = e.target.value))
-
-clearEl.addEventListener('click', () =>
-	context.clearRect(0, 0, canvas.width, canvas.height)
+}
 )
 
-eraserEl.addEventListener('click', () => {
-	color = '#fff'
+sizeUp.addEventListener("mousedown", () => {
+	if (size < 50) {
+		size += 5
+	} else {
+		size = 50
+	}
+
+	setSize()
 })
 
-saveEl.addEventListener('click', (e) => {
-	const imageURI = canvas.toDataURL('image/png')
-	e.currentTarget.href = imageURI
+
+
+// change color pen
+color.addEventListener("change", () => {
+	colorPen = `${color.value}`
+
 })
+
+//add event when mouse down
+
+document.addEventListener("mousedown", (e) => {
+	pos1 = {
+		x: e.offsetX,
+		y: e.offsetY
+	}
+	isDrawing = true
+
+})
+document.addEventListener("mousemove", function (e) {
+
+	if (isDrawing) {
+		pos2 = {
+			x: e.offsetX,
+			y: e.offsetY
+		}
+
+		// 		pour until it's full
+		ctx.beginPath();
+		ctx.arc(pos1.x, pos1.y, size / 2, 0, 2 * Math.PI);
+		ctx.fill()
+
+		ctx.beginPath()
+		ctx.strokeStyle = colorPen
+		ctx.moveTo(pos1.x, pos1.y)
+		ctx.lineTo(pos2.x, pos2.y)
+		ctx.lineWidth = size
+		ctx.stroke()
+
+		pos1.x = pos2.x
+		pos1.y = pos2.y
+
+	}
+})
+
+document.addEventListener("mouseup", function (e) {
+	isDrawing = false
+
+})
+
+eraser.addEventListener("click", () => {
+	colorPen = "#ffffff"
+
+})
+
+function setSize() {
+	sizePen.innerHTML = size
+}
+setSize()
+
+
