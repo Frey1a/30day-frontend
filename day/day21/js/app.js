@@ -1,5 +1,4 @@
-const inputToggle = document.querySelector('#toggleMode')
-
-inputToggle.addEventListener('change', () => {
-    document.body.classList.toggle('dark')
+let toggle = document.querySelector(".toggle")
+toggle.addEventListener("change", () => {
+	document.body.classList.toggle("dark")
 })
