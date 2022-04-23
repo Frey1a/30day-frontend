@@ -1,0 +1,73 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  width: 1200px;
+  margin: 100px auto;
+  margin-bottom: auto;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(15, 157, 88, 0.1);
+}
+
+.food-menu .active {
+  border: 2px solid #000000;
+  background-color: #0f9d58;
+  color: #ffffff;
+}
+.food-menu button {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 5px 10px;
+  padding: 10px 35px;
+  background-color: #ffffff;
+  color: #0f9d58;
+  border: 2px solid #0f9d58;
+  border-radius: 25px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.food-menu button:hover {
+  background-color: #0f9d58;
+  color: #ffffff;
+  border: 2px solid #000000;
+}
+
+.food-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.food-list .food-item {
+  margin: 20px;
+  width: 220px;
+  height: 200px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.food-list .food-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.5s;
+}
+.food-list .food-item:hover img {
+  transform: scale(1.5);
+}
+
+/*# sourceMappingURL=style.css.map */

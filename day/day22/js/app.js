@@ -1,21 +1,20 @@
-const foodBtns = document.querySelectorAll('.food-menu button')
-const foodList = document.querySelectorAll('.food-item')
+let btnFoods = document.querySelectorAll(".food-menu button")
+let itemFoods = document.querySelectorAll(".food-item")
 
-foodBtns.forEach((btn) => {
-	btn.addEventListener('click', (e) => {
-		const type = e.target.getAttribute('type-food')
+btnFoods.forEach(btn => {
+	btn.addEventListener("click", (e) => {
+		let type = e.target.getAttribute("type-food")
 
-		// remove and set active fpr button
-		document
-			.querySelector('.food-menu button.active')
-			.classList.remove('active')
-		e.target.classList.add('active')
+		document.querySelector(".food-menu .active").classList.remove("active")
+		btn.classList.add("active")
 
-		// filter elements
-		foodList.forEach((item) => {
-			if (type == 'all' || item.getAttribute('type-food') == type)
-				item.classList.remove('hide')
-			else item.classList.add('hide')
+		itemFoods.forEach(item => {
+			let typeItem = item.getAttribute("type-food")
+			item.classList.add("hide")
+
+			if (type == "all" || typeItem == type) {
+				item.classList.remove("hide")
+			}
 		})
 	})
 })
