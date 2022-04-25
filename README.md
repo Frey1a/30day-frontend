@@ -29,11 +29,11 @@
 |Day 18|April 18,2022|Drag and Drop|[Here](https://frey1a.github.io/30day-frontend/day/day18/index.html)|
 |Day 19|April 19,2022|Drawing App|[Here](https://frey1a.github.io/30day-frontend/day/day19/index.html)|
 |Day 20|April 20,2022|Typing Animation Effect|[Here](https://frey1a.github.io/30day-frontend/day/day20/index.html)|
-|Day 21|April 21,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day21/index.html)|
-|Day 22|April 22,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day22/index.html)|
-|Day 23|April 23,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day23/index.html)|
-|Day 24|April 24,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day24/index.html)|
-|Day 25|April 25,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day25/index.html)|
+|Day 21|April 21,2022|Dark/Light Mode|[Here](https://frey1a.github.io/30day-frontend/day/day21/index.html)|
+|Day 22|April 22,2022|Filter Elements|[Here](https://frey1a.github.io/30day-frontend/day/day22/index.html)|
+|Day 23|April 23,2022|Zoom Image|[Here](https://frey1a.github.io/30day-frontend/day/day23/index.html)|
+|Day 24|April 24,2022|Hover Board|[Here](https://frey1a.github.io/30day-frontend/day/day24/index.html)|
+|Day 25|April 25,2022|Custom Video Player|[Here](https://frey1a.github.io/30day-frontend/day/day25/index.html)|
 |Day 26|April 26,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day26/index.html)|
 |Day 27|April 27,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day27/index.html)|
 |Day 28|April 28,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day28/index.html)|
