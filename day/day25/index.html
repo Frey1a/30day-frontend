@@ -13,8 +13,9 @@
 
 <body>
 	<div class="player">
-		<video class="player__video"
-			src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4"></video>
+		<video class="player__video" src="video/Calling - Zekk.mp4" type="video/mp4">
+		</video>
+
 		<div class="player__controls">
 			<button class="player__button toggle">
 				<i class='bx bx-play'></i>
@@ -27,7 +28,7 @@
 			<button data-skip="10" class="player__button">10s »</button>
 			<div class="player__volume">
 				<i class='bx bxs-volume-full'></i>
-				<input type="range">
+				<input type="range" min="0" max="1" step="0.05" value="0.5">
 
 			</div>
 

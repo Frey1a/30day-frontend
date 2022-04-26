@@ -77,7 +77,7 @@ body{
 
 .player:hover{
 	.player__controls{
-		transform: translateY(-100%);
+		transform: translateY(-100%)!important;
 
 	}
 
