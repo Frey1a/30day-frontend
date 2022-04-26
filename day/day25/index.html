@@ -2,40 +2,51 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Custom Video Player</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Video Player</title>
 
-	<link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
-	<link rel="stylesheet" href="css/style.css" />
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
-	<div class="player">
-		<video class="player__video" src="video/Calling - Zekk.mp4" type="video/mp4">
+    <div class="player">
+        <div class="player__preview">
+            <img class="preview__img" src="img/calling-zekk.jpg" alt="">
+            <div class="preview__coating">
+                <i class='bx bx-play'></i>
+            </div>
+        </div>
+
+        <video class="player__video hiden" src="video/Calling - Zekk.mp4" type="video/mp4">
 		</video>
 
-		<div class="player__controls">
-			<button class="player__button toggle">
+        <div class="player__controls hiden">
+            <button class="player__button toggle">
 				<i class='bx bx-play'></i>
 			</button>
-			<p class="player__time">00:00/ 00:29</p>
-			<div class="player__progess">
-				<div class="progess__bar"></div>
-			</div>
-			<button data-skip="-10" class="player__button">« 10s</button>
-			<button data-skip="10" class="player__button">10s »</button>
-			<div class="player__volume">
-				<i class='bx bxs-volume-full'></i>
-				<input type="range" min="0" max="1" step="0.05" value="0.5">
+            <p class="player__time"></p>
+            <div class="player__progress">
+                <div class="progress__bar"></div>
+            </div>
+            <button data-skip="-10" class="player__button">« 10s</button>
+            <button data-skip="10" class="player__button">10s »</button>
+            <div class="player__volume">
+                <button class=" player__button volume__button" id="v_on">
+					<i class='bx bxs-volume-full'></i>
+				</button>
 
-			</div>
+                <input type="range" min="0" max="1" step="0.05" value="0.75">
 
-		</div>
-	</div>
+            </div>
 
-	<script src="js/app.js"></script>
+        </div>
+    </div>
+
+
+    <script src="js/app.js"></script>
 </body>
 
 </html>
