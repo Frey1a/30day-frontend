@@ -11,7 +11,7 @@ body {
     --primary-color: #0a6cf1;
     --background-color: #eee;
     --lable-color: #9c9c9c;
-    --text-box-color: #dadada;
+    --text-box-color: #c0c0c0;
     --text-color: #333;
     background-color: var(--background-color);
 }
