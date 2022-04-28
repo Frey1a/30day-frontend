@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+$facebook-color: #3b5999;
+$instagram-color: #e1306c;
+$youtube-color: #de463b;
+$twitter-color: #46c1f6;
+$github-color: #333;
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dadada;
+}
+
+.wrapper {
+    display: flex;
+    .icon {
+        position: relative;
+        margin: 0 20px;
+        i {
+            height: 60px;
+            width: 60px;
+            font-size: 25px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+        }
+        .tooltip {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            color: #fff;
+            padding: 10px 18px;
+            font-size: 20px;
+            font-weight: 500;
+            border-radius: 25px;
+            transform: translateX(-50%);
+            opacity: 0;
+            pointer-events: none;
+            box-shadow: 0px 10px 10px rgb(0 0 0 / 20%);
+            transition: 0.3s;
+        }
+        .tooltip:before {
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            left: 50%;
+            bottom: -6px;
+            transform: translateX(-50%) rotate(45deg);
+        }
+    }
+    .icon:hover .tooltip {
+        opacity: 1;
+        pointer-events: auto;
+        top: -70px;
+    }
+}
+
+.facebook {
+    i:hover {
+        background-color: $facebook-color;
+        color: #fff;
+    }
+    .tooltip {
+        background-color: $facebook-color;
+    }
+    .tooltip:before {
+        background-color: $facebook-color;
+    }
+}
+
+.github {
+    i:hover {
+        background-color: $github-color;
+        color: #fff;
+    }
+    .tooltip {
+        background-color: $github-color;
+    }
+    .tooltip:before {
+        background-color: $github-color;
+    }
+}
+
+.twitter {
+    i:hover {
+        background-color: $twitter-color;
+        color: #fff;
+    }
+    .tooltip {
+        background-color: $twitter-color;
+    }
+    .tooltip:before {
+        background-color: $twitter-color;
+    }
+}
+
+.instagram {
+    i:hover {
+        background-color: $instagram-color;
+        color: #fff;
+    }
+    .tooltip {
+        background-color: $instagram-color;
+    }
+    .tooltip:before {
+        background-color: $instagram-color;
+    }
+}
+
+.youtube {
+    i:hover {
+        background-color: $youtube-color;
+        color: #fff;
+    }
+    .tooltip {
+        background-color: $youtube-color;
+    }
+    .tooltip:before {
+        background-color: $youtube-color;
+    }
+}
