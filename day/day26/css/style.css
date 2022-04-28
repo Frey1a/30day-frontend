@@ -1,17 +1,80 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(145deg, #569377 50%, #dbede5 50%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #569377 50%, #dbede5 50%);
 }
 
+.container form {
+  display: flex;
+  align-items: stretch;
+}
+.container form .form-input {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+.container form .form-input input {
+  font-size: 20px;
+  padding: 0 10px;
+}
+.container form .form-input .form-eye:before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f070";
+  font-weight: 900;
+  width: 20px px;
+  display: inline-block;
+  cursor: pointer;
+}
+.container form .form-input .show:before {
+  content: "\f06e";
+}
+.container form button {
+  background-color: #48735f;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  margin-left: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+}
+.container .validator {
+  background-color: #48735f;
+  color: #fff;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.container .validator p {
+  padding: 10px 20px;
+}
+.container .validator p:before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f00d";
+  font-weight: 900;
+  width: 30px;
+  display: inline-block;
+  color: white;
+  font-size: 20px;
+}
+.container .validator .valid:before {
+  content: "\f00c";
+}
 
 /*# sourceMappingURL=style.css.map */

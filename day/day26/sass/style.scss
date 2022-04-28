@@ -2,6 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
 }
 
 body {
@@ -11,4 +18,63 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(145deg, #569377 50%, #dbede5 50%);
+}
+
+.container {
+    form {
+        display: flex;
+        align-items: stretch;
+        .form-input {
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            input {
+                font-size: 20px;
+                padding: 0 10px;
+            }
+            .form-eye:before {
+                font-family: 'Font Awesome 6 Free';
+                content: '\f070';
+                font-weight: 900;
+                width: 20px px;
+                display: inline-block;
+                cursor: pointer;
+            }
+            .show:before {
+                content: '\f06e';
+            }
+        }
+        button {
+            background-color: #48735f;
+            border-radius: 10px;
+            border: none;
+            color: #fff;
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    }
+    .validator {
+        background-color: #48735f;
+        color: #fff;
+        border-radius: 10px;
+        margin-top: 20px;
+        p {
+            padding: 10px 20px;
+        }
+        p:before {
+            font-family: 'Font Awesome 6 Free';
+            content: '\f00d';
+            font-weight: 900;
+            width: 30px;
+            display: inline-block;
+            color: white;
+            font-size: 20px;
+        }
+        .valid:before {
+            content: '\f00c';
+        }
+    }
 }
