@@ -1,13 +1,13 @@
 # 📓 30day-frontend
 ## 👉 Introduce
 - ☺️ This is the challenge I set for myself to develop myself
-- 😤 Inspiration is taken from [![youtube](https://img.shields.io/badge/-Youtube-red?style=flat-square&logo=Youtube)](https://youtube.com/playlist?list=PLodO7Gi1F7R0zA8RkRHcDgnPduNBmjkb5)
+- 😤 Inspiration is taken from [Nodemy](https://www.nodemy.vn/projects-html-css-js) [![youtube](https://img.shields.io/badge/-Youtube-red?style=flat-square&logo=Youtube)](https://youtube.com/playlist?list=PLodO7Gi1F7R0zA8RkRHcDgnPduNBmjkb5)
 - 😎 I start on April 1, 2022 ![Time start](https://img.shields.io/date/1648774800?color=bbed3e&label=%E2%8F%B1&style=flat-square)
 ## 👉 Timeline
 
 ## Table Time
 
-|**Day:pushpin:**|**Date &nbsp;:calendar:**|**Lessons/Tasks Done :alarm_clock:**| **Reference Links :link:**|
+|**Day:pushpin:**|**Date &nbsp;:calendar:**|**Lessons/Tasks Done :alarm_clock:**| **Live Demo:link:**|
 |------|-----------------|--------------------|---------------------|
 |Day 1|April 1,2022|Product Card|[Here](https://frey1a.github.io/30day-frontend/day/day1/index.html)|
 |Day 2|April 2,2022|Profile Card|[Here](https://frey1a.github.io/30day-frontend/day/day2/index.html)|
@@ -34,8 +34,8 @@
 |Day 23|April 23,2022|Zoom Image|[Here](https://frey1a.github.io/30day-frontend/day/day23/index.html)|
 |Day 24|April 24,2022|Hover Board|[Here](https://frey1a.github.io/30day-frontend/day/day24/index.html)|
 |Day 25|April 25,2022|Custom Video Player|[Here](https://frey1a.github.io/30day-frontend/day/day25/index.html)|
-|Day 26|April 26,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day26/index.html)|
-|Day 27|April 27,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day27/index.html)|
-|Day 28|April 28,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day28/index.html)|
-|Day 29|April 29,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day29/index.html)|
-|Day 30|April 30,2022|      |[Here](https://frey1a.github.io/30day-frontend/day/day30/index.html)|
+|Day 26|April 26,2022|Validator Password|[Here](https://frey1a.github.io/30day-frontend/day/day26/index.html)|
+|Day 27|April 27,2022|Tooltip|[Here](https://frey1a.github.io/30day-frontend/day/day27/index.html)|
+|Day 28|April 28,2022|Skeleton Loading Effect|[Here](https://frey1a.github.io/30day-frontend/day/day28/index.html)|
+|Day 29|April 29,2022|Play Piano|[Here](https://frey1a.github.io/30day-frontend/day/day29/index.html)|
+|Day 30|April 30,2022|Simple Carousel|[Here](https://frey1a.github.io/30day-frontend/day/day30/index.html)|
